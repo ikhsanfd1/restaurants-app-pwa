@@ -43,10 +43,10 @@ const DetailResto = {
         exploreRestoRecord: this._exploreResto,
       });
 
-      const isUnliked = await FavoriteExploreIdb.isUnliked(this._exploreResto.id);
-      if (isUnliked) {
-        ErrorContainer.renderError('This restaurant has been unliked.');
-      }
+      // const isUnliked = await FavoriteExploreIdb.isUnliked(this._exploreResto.id);
+      // if (isUnliked) {
+      //   ErrorContainer.renderError('This restaurant has been unliked.');
+      // }
 
       const addReviewButton = document.querySelector('#addReviewButton');
       if (addReviewButton) {

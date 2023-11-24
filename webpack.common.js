@@ -13,7 +13,6 @@ const { GenerateSW } = require('workbox-webpack-plugin');
 module.exports = {
   entry: {
     app: path.resolve(__dirname, 'src/scripts/index.js'),
-    sw: path.resolve(__dirname, 'src/scripts/sw.js'),
   },
   output: {
     filename: '[name].bundle.js',
@@ -43,7 +42,7 @@ module.exports = {
     splitChunks: {
       chunks: 'all',
       minSize: 30000,
-      maxSize: 50000,
+      maxSize: 244000,
       minChunks: 1,
       maxAsyncRequests: 10,
       maxInitialRequests: 5,
@@ -72,7 +71,9 @@ module.exports = {
     },
   },
   plugins: [
-    new CleanWebpackPlugin(),
+    new CleanWebpackPlugin({
+      cleanStaleWebpackAssets: false,
+    }),
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: path.resolve(__dirname, 'src/templates/index.html'),
@@ -110,10 +111,14 @@ module.exports = {
         },
       ],
       overrideExtension: true,
+      detailedLogs: false,
     }),
-    new BundleAnalyzerPlugin(),
+    new BundleAnalyzerPlugin({
+      analyzerMode: 'disabled',
+    }),
     new GenerateSW({
       clientsClaim: true,
+      swDest: './sw.bundle.js',
       skipWaiting: true,
       runtimeCaching: [
         {

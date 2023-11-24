@@ -55,6 +55,13 @@ const Explore = {
         }
       });
     }
+
+    const modalCardDetail = document.querySelector('#lihatLengkapModal .modal-card-detail');
+    if (modalCardDetail) {
+      modalCardDetail.addEventListener('click', (e) => {
+        this._hideLihatLengkapModal();
+      });
+    }
   },
 
   _populateExploreRestoRecordToCard(restaurants = null) {
