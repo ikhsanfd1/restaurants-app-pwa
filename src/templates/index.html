@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Free Catalog Restaurant's menu for you" />
+    <meta name="theme-color" content="#ff2e2e" />
+
+    <link rel="icon" href="./images/favicon.png" />
+    <link rel="manifest" href="./images/app.webmanifest" />
+    <link rel="apple-touch-icon" href="/icons/icon-192x192.png" />
+
+    <!-- Font Awesome -->
+    <script src="https://use.fontawesome.com/b070c8f1df.js"></script>
+
+    <title>Restaurant Apps</title>
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <a href="#main-content" class="skip-link">Skip to Content</a>
+
+      <nav class="menu" role="navigation">
+        <div class="menu-toggle">
+          <a id="hamburger" href="#" aria-label="navigation-menu">☰</a>
+        </div>
+        <div class="brand">
+          <h1>Mouton <span>Slice & Grill</span></h1>
+        </div>
+
+        <ul class="navlinks">
+          <li><a href="#">Home</a></li>
+          <li><a href="#/favorite">Favorite</a></li>
+          <li>
+            <a href="https://www.linkedin.com/in/m-ikhsan-fadhillah-44542a262/" target="_blank"
+              >About Us</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <!-- Akhir Header -->
+
+    <!-- Main -->
+    <main id="main-content" tabindex="0">
+      <spinners-load id="spinnersLoad" title="Loading..."></spinners-load>
+    </main>
+    <!-- Akhir Main -->
+
+    <!-- Footer -->
+    <footer>
+      <div class="credit">
+        <p>
+          Created by
+          <a href="https://www.linkedin.com/in/m-ikhsan-fadhillah-44542a262/" target="_blank"
+            >Ikhsan FD</a
+          >. | &copy; 2023.
+        </p>
+      </div>
+    </footer>
+    <!-- Akhir Footer -->
+
+    <!-- Modal -->
+    <modal-card-detail
+      id="lihatLengkapModal"
+      tabindex="-1"
+      data-bs-keyboard="false"
+      data-bs-backdrop="static"
+    ></modal-card-detail>
+
+    <modal-add-review
+      title="Add Review"
+      id="addReviewModal"
+      tabindex="-1"
+      data-bs-keyboard="false"
+      data-bs-backdrop="static"
+    ></modal-add-review>
+  </body>
+</html>

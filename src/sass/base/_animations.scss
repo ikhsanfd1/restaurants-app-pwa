@@ -1,0 +1,16 @@
+@keyframes animateModal {
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes spinnerBorder {
+  to {
+    transform: rotate(360deg);
+  }
+}

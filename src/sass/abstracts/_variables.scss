@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,200;0,300;0,500;1,300&display=swap');
+
+$breakpoints: (
+  'xs': 300px,
+  'sm': 465px,
+  'md': 648px,
+  'lg': 992px,
+  'xl': 1200px,
+  'xxl': 1400px,
+);
+
+$bg-primary-color: linear-gradient(to left, #f7797d, #fbd786, #c6ffdd);
+$bg-secondary-color: #f6f8fd;
+$primary-color: #231942;
+$secondary-color: #f45b6a;
+
+$primary-fonts: 'Jost', sans-serif;
+
+$primary-border-radius: 4px;
+$secondary-border-radius: 6px;
+
+$padding-body: 5px 20px;
+
+$button-transitionanim-time: 0.15s;
+$button-transitionanim-style: linear;
+$floating-transitionanim-time: 6px;

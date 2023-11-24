@@ -1,0 +1,27 @@
+@use '../abstracts/variables' as var;
+@use '../abstracts/mixins' as mix;
+@use 'sass:map';
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem 0 2rem;
+  background-color: var.$secondary-color;
+  color: var.$primary-color;
+
+  .credit {
+    font-size: 1rem;
+    align-items: center;
+
+    a {
+      font-weight: 700;
+      color: var.$bg-secondary-color;
+
+      &:hover {
+        color: var.$primary-color;
+      }
+    }
+  }
+}

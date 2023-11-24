@@ -1,0 +1,9 @@
+@use '../abstracts/variables' as var;
+@use 'sass:map';
+
+main #errorContainer {
+  display: none;
+  color: var.$primary-color;
+  text-align: center;
+  font-size: 1.5rem;
+}

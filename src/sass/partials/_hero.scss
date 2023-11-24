@@ -1,0 +1,51 @@
+@use '../abstracts/variables' as var;
+@use '../abstracts/mixins' as mix;
+@use 'sass:map';
+
+main .hero-section {
+  text-align: center;
+  display: grid;
+  width: 100%;
+  max-width: 100%;
+
+  @media screen and (min-width: map.get(var.$breakpoints, 'lg')) and (max-width: map.get(var.$breakpoints, 'xl')) {
+    background-image: url(../public/images/heros/hero-image_4-desktop.jpg);
+    min-width: 1000px;
+  }
+
+  padding: 12rem;
+  background-image: url(../public/images/heros/hero-image_4.webp);
+
+  @media screen and (min-width: map.get(var.$breakpoints, 'xs')) and (max-width: map.get(var.$breakpoints, 'md')) {
+    background-image: url(../public/images/heros/hero-image_4-mobile.jpg);
+  }
+
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  -webkit-mask-image: linear-gradient(rgba(0, 0, 0, 1) 80%, rgba(0, 0, 0, 0));
+  mask-image: linear-gradient(rgba(0, 0, 0, 1) 80%, rgba(0, 0, 0, 0));
+  position: relative;
+
+  .hero-img {
+    position: fixed;
+    padding: 4.7rem;
+    h1 {
+      color: var.$bg-secondary-color;
+      font-size: 3.5rem;
+      font-weight: bold;
+    }
+
+    p {
+      font-size: 1.5rem;
+      color: var.$bg-secondary-color;
+      line-height: 1.2;
+      padding-block: 15px;
+    }
+
+    span {
+      color: var.$bg-secondary-color;
+      font-style: italic;
+    }
+  }
+}

@@ -1,0 +1,32 @@
+@use '../abstracts/variables' as var;
+@use 'sass:map';
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var.$primary-fonts;
+  background: var.$bg-primary-color;
+  overflow-x: hidden;
+}
+
+main {
+  margin-block: 3.5rem;
+}
+
+.container {
+  display: grid;
+  padding: var.$padding-body;
+}
+
+a,
+input,
+button,
+textarea {
+  display: inline-block;
+  min-width: 44px;
+  min-height: 44px;
+}

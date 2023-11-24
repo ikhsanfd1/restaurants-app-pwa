@@ -1,0 +1,263 @@
+@use '../abstracts/variables' as var;
+@use '../abstracts/mixins' as mix;
+@use 'sass:map';
+
+modal-card-detail {
+  display: none;
+  flex-wrap: wrap;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.7);
+
+  .modal-card {
+    display: grid;
+    position: relative;
+    background-color: var.$bg-secondary-color;
+    color: var.$primary-color;
+    padding: 1.2rem;
+    border: 1px solid var.$primary-color;
+    animation: animateModal 0.5s;
+
+    .modal-card-header {
+      a {
+        position: absolute;
+        font-size: 1.7rem;
+        top: 0.5rem;
+        right: -20px;
+        color: var.$primary-color;
+        text-decoration: none;
+
+        &:hover {
+          color: var.$secondary-color;
+        }
+      }
+
+      img {
+        height: 16rem;
+        margin-right: 2rem;
+        display: inline-block;
+        object-fit: cover;
+        width: 100%;
+      }
+
+      h4 {
+        background-color: var.$primary-color;
+        color: var.$bg-secondary-color;
+        position: relative;
+        top: -15rem;
+        left: 0;
+        border: 1px solid white;
+        width: 30%;
+        padding: 0.8rem;
+      }
+
+      .like {
+        width: 55px;
+        height: 55px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: var.$primary-color;
+
+        position: relative;
+        top: -6rem;
+        left: 0;
+        border-radius: 50%;
+        border: 0;
+
+        font-size: 18px;
+        color: var.$bg-secondary-color;
+        cursor: pointer;
+      }
+    }
+  }
+
+  @media screen and (min-width: map.get(var.$breakpoints, 'xs')) {
+    .modal-card {
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 10px;
+      margin: 14% auto;
+      width: 90%;
+
+      .modal-card-body {
+        display: flex;
+        flex-direction: column;
+        align-self: flex-start;
+        margin-top: -30px;
+
+        h4 {
+          font-size: 1rem;
+          padding-bottom: 5px;
+        }
+
+        h3 {
+          font-size: 1.2rem;
+          padding-bottom: 1.3rem;
+        }
+        p {
+          padding-bottom: 1.3rem;
+          font-size: 1rem;
+        }
+        a {
+          color: var.$primary-color;
+
+          &:hover {
+            color: var.$secondary-color;
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (min-width: map.get(var.$breakpoints, 'sm')) {
+    .modal-card {
+      gap: 30px;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      margin: 12% auto;
+      width: 90%;
+
+      .modal-card-body {
+        display: flex;
+        flex-direction: column;
+        align-self: flex-start;
+        margin-top: 0;
+
+        h4 {
+          font-size: 1rem;
+          padding-bottom: 5px;
+        }
+
+        h3 {
+          font-size: 1.2rem;
+          padding-bottom: 1.3rem;
+        }
+        p {
+          padding-bottom: 1.3rem;
+          font-size: 1rem;
+        }
+        a {
+          color: var.$primary-color;
+
+          &:hover {
+            color: var.$secondary-color;
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (min-width: map.get(var.$breakpoints, 'md')) {
+    .modal-card {
+      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      margin: 10% auto;
+      width: 90%;
+
+      .modal-card-body {
+        display: flex;
+        flex-direction: column;
+        align-self: flex-start;
+        margin: 0;
+        h4 {
+          font-size: 1rem;
+          padding-bottom: 5px;
+        }
+
+        h3 {
+          font-size: 1.2rem;
+          padding-bottom: 1.3rem;
+        }
+        p {
+          font-size: 1rem;
+          padding-bottom: 1.3rem;
+        }
+        a {
+          color: var.$primary-color;
+
+          &:hover {
+            color: var.$secondary-color;
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (min-width: map.get(var.$breakpoints, 'lg')) {
+    .modal-card {
+      gap: 40px;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      margin: 8% auto;
+      width: 75%;
+
+      .modal-card-body {
+        display: flex;
+        flex-direction: column;
+        align-self: flex-start;
+        margin: 0;
+
+        h4 {
+          font-size: 1rem;
+          padding-bottom: 5px;
+        }
+
+        h3 {
+          font-size: 1.2rem;
+          padding-bottom: 1.3rem;
+        }
+        p {
+          font-size: 1rem;
+          padding-bottom: 1.3rem;
+        }
+        a {
+          color: var.$primary-color;
+
+          &:hover {
+            color: var.$secondary-color;
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (min-width: map.get(var.$breakpoints, 'xl')) {
+    .modal-card {
+      gap: 12px;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      margin: 5% auto;
+      width: 68%;
+
+      .modal-card-body {
+        display: flex;
+        flex-direction: column;
+        align-self: flex-start;
+        margin-top: 0;
+
+        h4 {
+          font-size: 1rem;
+          padding-block: 5px;
+        }
+
+        h3 {
+          font-size: 1.2rem;
+          padding-bottom: 1.7rem;
+        }
+        p {
+          font-size: 1rem;
+          padding-bottom: 1.3rem;
+        }
+        a {
+          color: var.$primary-color;
+
+          &:hover {
+            color: var.$secondary-color;
+          }
+        }
+      }
+    }
+  }
+}

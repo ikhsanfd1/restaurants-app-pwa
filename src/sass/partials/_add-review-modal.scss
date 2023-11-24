@@ -1,0 +1,127 @@
+@use '../abstracts/variables' as var;
+@use '../abstracts/mixins' as mix;
+@use 'sass:map';
+
+modal-add-review {
+  display: none;
+  flex-wrap: wrap;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.7);
+
+  .modal-add-container {
+    display: grid;
+    position: relative;
+    background-color: var.$bg-secondary-color;
+    color: var.$primary-color;
+    padding: 1.2rem;
+    border: 1px solid var.$primary-color;
+    animation: animateModal 0.5s;
+
+    gap: 12px;
+    margin: 5% auto;
+    width: 68%;
+
+    form {
+      width: 100%;
+    }
+
+    .modal-add-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 1.2rem;
+
+      .modal-title {
+        margin: 0;
+      }
+
+      a {
+        position: absolute;
+        font-size: 1.7rem;
+        top: 0.5rem;
+        right: -20px;
+        color: var.$primary-color;
+        text-decoration: none;
+
+        &:hover {
+          color: var.$secondary-color;
+        }
+      }
+    }
+
+    .modal-add-body {
+      margin-top: 1rem;
+      width: 100%;
+
+      .form-label {
+        display: block;
+        margin-bottom: 0.5rem;
+        width: 100%;
+      }
+
+      input,
+      text-area {
+        width: 100%;
+        margin-bottom: 1rem;
+      }
+
+      .form-control {
+        display: block;
+        margin-bottom: 1rem;
+        width: 100%;
+      }
+
+      text-area-validation {
+        width: 100%;
+        margin-bottom: 1rem;
+        box-sizing: border-box;
+      }
+
+      .invalid-feedback {
+        color: red;
+        font-size: 0.8rem;
+      }
+
+      .valid-feedback {
+        color: green;
+        font-size: 0.8rem;
+      }
+    }
+
+    // Menampilkan pesan kesalahan di bawah elemen input yang tidak valid
+    text-area-validation:invalid + .invalid-feedback,
+    text-area-validation:valid + .valid-feedback,
+    input-with-validation:invalid + .invalid-feedback,
+    input-with-validation:valid + .valid-feedback {
+      display: block;
+    }
+
+    .modal-add-footer {
+      display: flex;
+      justify-content: end;
+
+      button {
+        display: block;
+        background-color: var.$primary-color;
+        color: var.$bg-secondary-color;
+        border-radius: 5px;
+        padding: 12px;
+        font-size: 1.2rem;
+        font-family: var.$primary-fonts;
+        border: none;
+        cursor: pointer;
+
+        &:hover {
+          background-color: var.$secondary-color;
+          color: var.$primary-color;
+        }
+      }
+    }
+  }
+}

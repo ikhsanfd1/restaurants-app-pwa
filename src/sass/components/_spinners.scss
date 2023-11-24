@@ -1,0 +1,37 @@
+@use '../abstracts/variables' as var;
+@use 'sass:map';
+
+main spinners-load {
+  .d-flex {
+    display: flex;
+  }
+
+  .justify-content-center {
+    justify-content: center;
+  }
+
+  .btn-primary {
+    background-color: var.$secondary-color;
+    color: var.$primary-color;
+    cursor: not-allowed;
+  }
+
+  .fs-4 {
+    font-size: 1.5rem;
+  }
+
+  .text-white {
+    color: var.$bg-secondary-color;
+  }
+
+  .spinner {
+    display: inline-block;
+    width: 2rem;
+    height: 2rem;
+    vertical-align: text-bottom;
+    border: 0.25em solid currentColor;
+    border-right-color: transparent;
+    border-radius: 50%;
+    animation: spinnerBorder 0.75s linear infinite;
+  }
+}

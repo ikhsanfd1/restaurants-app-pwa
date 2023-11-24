@@ -1,0 +1,352 @@
+@use '../abstracts/variables' as var;
+@use 'sass:map';
+
+main .resto-detail {
+  display: grid;
+
+  .detail-favorite {
+    display: grid;
+    max-width: 992px;
+    gap: 18px 16px;
+    color: var.$primary-color;
+
+    .detail-header-favorite {
+      display: grid;
+
+      .detail-title {
+        grid-area: title;
+        padding-block: 10px;
+        font-size: 2rem;
+        font-weight: 500;
+      }
+
+      aside {
+        grid-area: gambar;
+
+        .detail-poster {
+          display: inline-block;
+          object-fit: cover;
+          height: 340px;
+        }
+
+        h4 {
+          color: var.$bg-secondary-color;
+          font-weight: bold;
+          position: relative;
+          top: -320px;
+          left: 0;
+          border: 1px solid white;
+          width: 35%;
+          padding: 0.5rem;
+          background-color: var.$primary-color;
+        }
+
+        p {
+          color: var.$bg-secondary-color;
+          font-weight: bold;
+          position: relative;
+          top: -300px;
+          border: 1px solid white;
+          width: 30%;
+          padding: 0.5rem;
+          background-color: var.$primary-color;
+        }
+      }
+
+      .detail-menu {
+        grid-area: menu;
+        display: flex;
+        width: 100%;
+
+        .detail-menu-food {
+          width: 100%;
+
+          p {
+            padding-block: 10px;
+          }
+        }
+
+        .detail-menu-drink {
+          margin-block: 34px 0;
+          width: 50%;
+
+          p {
+            padding-block: 10px;
+          }
+        }
+
+        .detail-address {
+          font-size: 1.2rem;
+        }
+      }
+
+      h3 {
+        font-size: 1.3rem;
+        font-weight: 500;
+      }
+      h4 {
+        margin: 8px 0;
+        font-size: 1.2rem;
+      }
+    }
+
+    .detail-body-favorite {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      text-align: justify;
+      h3 {
+        padding-block: 10px;
+        font-size: 1.2rem;
+      }
+    }
+
+    .detail-footer-favorite {
+      display: grid;
+      gap: 16px;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+
+      h3 {
+        grid-column: 1 / 1;
+        padding-block: 10px;
+        font-size: 1.2rem;
+      }
+
+      .add-review-container {
+        display: grid;
+        grid-column: 2 / 4;
+      }
+
+      .add-review {
+        display: block;
+        width: 44px;
+        height: 44px;
+        font-size: 1.5rem;
+        background-color: var.$primary-color;
+        border: none;
+        border-radius: 5px;
+        color: var.$bg-secondary-color;
+        cursor: pointer;
+
+        &:hover {
+          background-color: var.$secondary-color;
+          color: var.$primary-color;
+        }
+      }
+
+      .review {
+        display: grid;
+        gap: 10px;
+        padding: 8px;
+        border-radius: 5px;
+        border: 1px solid var.$bg-primary-color;
+        background-color: var.$bg-secondary-color;
+        box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+
+        p {
+          margin: 0;
+        }
+      }
+    }
+  }
+
+  @media screen and (min-width: map.get(var.$breakpoints, 'xs')) {
+    .detail-favorite {
+      padding: 0 10px;
+      .detail-header-favorite {
+        grid-template-areas:
+          'title title title'
+          'gambar gambar gambar'
+          'menu menu menu';
+
+        aside {
+          width: 100%;
+
+          img {
+            width: 100%;
+          }
+
+          p {
+            left: 0;
+            text-align: start;
+          }
+        }
+
+        .detail-menu {
+          .detail-address {
+            margin-top: 12px;
+          }
+        }
+      }
+
+      .detail-footer-favorite {
+        h3 {
+          grid-column: 1 / -1;
+        }
+
+        .add-review-container {
+          grid-column: 1 / -1;
+        }
+      }
+    }
+  }
+
+  @media screen and (min-width: map.get(var.$breakpoints, 'sm')) {
+    .detail-favorite {
+      margin: 0 auto;
+
+      .detail-header-favorite {
+        grid-template-areas:
+          'title title title'
+          'gambar gambar gambar'
+          'menu menu menu';
+
+        aside {
+          width: 100%;
+
+          img {
+            width: 100%;
+          }
+
+          p {
+            left: 0;
+            text-align: start;
+          }
+        }
+
+        .detail-menu {
+          .detail-address {
+            margin-top: 12px;
+          }
+        }
+      }
+
+      .detail-footer-favorite {
+        h3 {
+          grid-column: 1 / -1;
+        }
+
+        .add-review-container {
+          grid-column: 1 / -1;
+        }
+      }
+    }
+  }
+
+  @media screen and (min-width: map.get(var.$breakpoints, 'md')) {
+    .detail-favorite {
+      margin: 0 auto;
+
+      .detail-header-favorite {
+        grid-template-areas:
+          'title title title'
+          'gambar gambar gambar'
+          'menu menu menu';
+
+        aside {
+          width: 100%;
+
+          img {
+            width: 100%;
+          }
+
+          p {
+            left: 0;
+            text-align: start;
+          }
+        }
+
+        .detail-menu {
+          .detail-address {
+            margin-top: 12px;
+          }
+        }
+      }
+
+      .detail-footer-favorite {
+        h3 {
+          grid-column: 1 / 1;
+        }
+
+        .add-review-container {
+          grid-column: 2 / 3;
+        }
+      }
+    }
+  }
+
+  @media screen and (min-width: map.get(var.$breakpoints, 'lg')) {
+    .detail-favorite {
+      margin: 0 auto;
+
+      .detail-header-favorite {
+        grid-template-areas:
+          'title title title'
+          'gambar menu menu';
+
+        aside {
+          width: 550px;
+        }
+
+        .detail-menu {
+          .detail-address {
+            margin-top: 12px;
+          }
+        }
+      }
+
+      .detail-footer-favorite {
+        h3 {
+          grid-column: 1 / 1;
+        }
+
+        .add-review-container {
+          grid-column: 2 / 4;
+        }
+      }
+    }
+  }
+
+  @media screen and (min-width: map.get(var.$breakpoints, 'xl')) {
+    .detail-favorite {
+      margin: 0 auto;
+
+      .detail-header-favorite {
+        grid-template-areas:
+          'title title title'
+          'gambar menu menu';
+
+        aside {
+          width: 550px;
+        }
+      }
+
+      .detail-footer-favorite {
+        h3 {
+          grid-column: 1 / 1;
+        }
+
+        .add-review-container {
+          grid-column: 2 / 4;
+        }
+      }
+    }
+  }
+}
+
+.like {
+  font-size: 18px;
+  position: fixed;
+  top: 80px;
+  right: 50px;
+  background-color: var.$primary-color;
+  color: var.$bg-secondary-color;
+  border: 0;
+  border-radius: 50%;
+  width: 55px;
+  height: 55px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

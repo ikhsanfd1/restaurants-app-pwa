@@ -1,0 +1,108 @@
+@use '../abstracts/variables' as var;
+@use '../abstracts/mixins' as mix;
+@use 'sass:map';
+
+main .explorer {
+  padding-block: 9rem;
+
+  h2 {
+    font-size: 1.8rem;
+    color: var.$primary-color;
+    text-align: center;
+  }
+
+  .cards {
+    .card {
+      border: 2px solid white;
+      height: 300px;
+      background-color: var.$secondary-color;
+      box-shadow: 1px 0 5px 2px rgba($color: var.$primary-color, $alpha: 1);
+      border-radius: 4px;
+
+      .card-header {
+        height: 50%;
+        h4 {
+          color: var.$bg-secondary-color;
+          font-weight: bold;
+          position: relative;
+          top: -9rem;
+          left: 0;
+          border: 1px solid white;
+          width: 35%;
+          padding: 0.5rem;
+          background-color: var.$primary-color;
+        }
+        img {
+          display: inline-block;
+          object-fit: cover;
+          width: 100%;
+          height: 180px;
+        }
+      }
+
+      .card-body {
+        display: grid;
+        gap: 5px;
+        color: var.$primary-color;
+
+        .card-rating {
+          font-size: 12px;
+        }
+
+        .card-title {
+          padding-bottom: 1.2rem;
+        }
+
+        a {
+          color: var.$primary-color;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: map.get(var.$breakpoints, 'xs')) {
+  .card-body {
+    padding: 6rem 1rem;
+
+    .card-title {
+      padding-bottom: 1.2rem;
+    }
+  }
+}
+
+@media screen and (min-width: map.get(var.$breakpoints, 'sm')) {
+  .card-body {
+    padding: 5rem 1rem;
+
+    .card-title {
+      padding-bottom: 1.2rem;
+    }
+  }
+}
+
+@media screen and (min-width: map.get(var.$breakpoints, 'md')) {
+  .card-body {
+    max-width: 640px;
+  }
+}
+
+@media screen and (min-width: map.get(var.$breakpoints, 'lg')) {
+  .card-body {
+    padding: 3.2rem 1rem;
+
+    .card-title {
+      padding-bottom: 1.2rem;
+    }
+  }
+}
+
+@media screen and (min-width: map.get(var.$breakpoints, 'xl')) {
+  .card-body {
+    padding: 3rem 1rem;
+
+    .card-title {
+      padding-bottom: 1.2rem;
+    }
+  }
+}
